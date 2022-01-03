@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,24 @@ namespace DataGrid.Dane
     public partial class WindowZPliku : Window
     {
         // plik z danymi
-        private string plik1 = @"..\..\dane\Produkty.xml";
+        private string plik1 = @"..\Dane\Produkty.xml";
         // plik na wyniki
-        private string plik2 = @"..\..\dane\Produkty2.xml";
+        private string plik2 = @"..\Dane\Produkty2.xml";
         private XElement wykazProduktow;
         
         public WindowZPliku()
         {
             InitializeComponent();
+            PrzygotujWiazanie();
+        }
+
+        private void PrzygotujWiazanie()
+        {
+            if (File.Exists(plik1))
+            {
+                wykazProduktow = XElement.Load(plik1);
+                gridProdukty.DataContext = wykazProduktow;
+            }
         }
     }
 }
