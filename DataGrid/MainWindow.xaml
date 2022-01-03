@@ -13,8 +13,15 @@
                   IsReadOnly="False"
                   AlternatingRowBackground="CadetBlue"
                   AlternationCount="3"
-                  GridLinesVisibility="None">
-
+                  GridLinesVisibility="None"
+                  AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}"/>
+            <DataGridCheckBoxColumn Header="Dostepność" Binding="{Binding Dostepnosc}"/>
+            <DataGridTextColumn Header="Cena" Binding="{Binding Cena}"/>
+            <DataGridTextColumn Header="Kategoria" Binding="{Binding Kategoria}"/>
+        </DataGrid.Columns>
         </DataGrid>
+
     </Grid>
 </Window>
