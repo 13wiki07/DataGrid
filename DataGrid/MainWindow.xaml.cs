@@ -36,6 +36,11 @@ namespace DataGrid
             ListaProduktow.Add(new Produkt("Diuna", true, 24, "fantastyka"));
             ListaProduktow.Add(new Produkt("Hobbit", false, 15, "fantastyka"));
             gridProdukty.ItemsSource = ListaProduktow;
+
+            ObservableCollection<String> ListaKategorii = new ObservableCollection<String>()
+            { "klasyka", "sensacyjna", "fantastyka", "obyczajowe", "dramat"};
+
+            KategorieComboBox.ItemsSource = ListaKategorii;
         }
     }
 }

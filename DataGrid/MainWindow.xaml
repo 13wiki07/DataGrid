@@ -15,13 +15,20 @@
                   AlternationCount="3"
                   GridLinesVisibility="None"
                   AutoGenerateColumns="False">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}"/>
-            <DataGridCheckBoxColumn Header="Dostepność" Binding="{Binding Dostepnosc}"/>
-            <DataGridTextColumn Header="Cena" Binding="{Binding Cena}"/>
-            <DataGridTextColumn Header="Kategoria" Binding="{Binding Kategoria}"/>
-        </DataGrid.Columns>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}"/>
+                <DataGridCheckBoxColumn Header="Dostepność" Binding="{Binding Dostepnosc}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Cena}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                            <Setter Property="Padding" Value="5"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridComboBoxColumn Header="Kategoria" SelectedItemBinding="{Binding Kategoria}"
+                                        x:Name="KategorieComboBox"/>
+            </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </Window>
